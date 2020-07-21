@@ -1,13 +1,14 @@
 steps:
-#step 1
+# Pulling the latest existing image can make the build process faster as docker uses cache
 - name: 'gcr.io/cloud-builders/docker' 
+  id: 'Pull'
   entrypoint: 'bash'
   args: [
    '-c', 
    'docker pull gcr.io/$PROJECT_ID/kube-google-cloud:latest || exit 0'
   ]
-#step 2
 - name: gcr.io/cloud-builders/docker
+  id: 'Build'
   args: [
    'build', 
    '-t', 
@@ -16,14 +17,14 @@ steps:
    'gcr.io/$PROJECT_ID/kube-google-cloud:latest',
    '.'
   ]
-#step 3
 - name: 'gcr.io/cloud-builders/kubectl'
+  id: 'Deploy'
   args: ['apply', '-f', 'k8s/']
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-b'
   - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-1'
-#step 4
 - name: 'gcr.io/cloud-builders/kubectl'
+  id: 'Push'
   args: [
    'set', 
    'image', 
