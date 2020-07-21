@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: kube-google-cloud
+  name: kube-google-cloud
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: kube-google-cloud
+  template:
+    metadata:
+      labels:
+        run: kube-google-cloud
+    spec:
+      containers:
+      - image: gcr.io/<google-project-id>/kube-google-cloud:latest
+        name: kube-google-cloud
+        ports:
+        - containerPort: <container-port>
