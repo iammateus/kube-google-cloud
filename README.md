@@ -1,7 +1,7 @@
 
 # Kube Google Cloud
 
-An example project of Google's Kubernetes Engine and Cloud Build usage to deploy a Hello World app.
+A repository to exemplify Google's Kubernetes Engine and Cloud Build usage to deploy a Hello World app.
 
 ## Project structure
 
