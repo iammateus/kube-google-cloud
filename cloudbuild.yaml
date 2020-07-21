@@ -33,8 +33,8 @@ steps:
    'kube-google-cloud=gcr.io/$PROJECT_ID/kube-google-cloud:$BRANCH_NAME-$COMMIT_SHA'
   ]
   env:
-  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-b'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-1'
+  - 'CLOUDSDK_COMPUTE_ZONE=$_CLUSTER_ZONE'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=$_CLUSTER_NAME'
 # push images to Google Container Registry with tags
 images: [
   'gcr.io/$PROJECT_ID/kube-google-cloud:$BRANCH_NAME-$COMMIT_SHA',
