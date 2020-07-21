@@ -12,4 +12,3 @@ A repository to exemplify Google's Kubernetes Engine and Cloud Build usage to de
  All the basic manifests required to deploy the app.
 
 The cloudbuild.yaml file describes the CI/CD pipeline*
-
