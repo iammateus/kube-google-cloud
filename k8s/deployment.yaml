@@ -15,7 +15,7 @@ spec:
         run: kube-google-cloud
     spec:
       containers:
-      - image: gcr.io/<google-project-id>/kube-google-cloud:latest
+      - image: gcr.io/august-sandbox-284023/kube-google-cloud:latest
         name: kube-google-cloud
         ports:
         - containerPort: 80
