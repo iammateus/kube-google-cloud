@@ -6,7 +6,7 @@ An example project of Google's Kubernetes Engine and Cloud Build usage to deploy
 ## Project structure
 
  /app
- A little app with python with a single route saying "Hello world".
+ A little python app with a single route saying "Hello world".
  
  /k8s
  All the basic manifests required to deploy the app.
