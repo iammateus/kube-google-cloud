@@ -6,6 +6,7 @@ spec:
   selector:
      run: kube-google-cloud
   ports:
-  - port: 80
+  - protocol: TCP
+    port: 80
     targetPort: 5000
   type: NodePort

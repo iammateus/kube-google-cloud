@@ -4,6 +4,7 @@ metadata:
   name: kube-google-cloud-ing
   annotations:
     kubernetes.io/ingress.global-static-ip-name: kube-google-cloud
+    networking.gke.io/managed-certificates: kube-google-cloud
   labels:
     app: kube-google-cloud
 spec:
