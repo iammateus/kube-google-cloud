@@ -1,0 +1,12 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: kube-google-cloud-ing
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: kube-google-cloud
+  labels:
+    app: kube-google-cloud
+spec:
+  backend:
+    serviceName: kube-google-cloud-svc
+    servicePort: 80
