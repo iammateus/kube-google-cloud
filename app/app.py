@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def helloWorld():
-    data = {'message': 'Hello world ;)'}
+    data = {'message': 'Hello world ;) master'}
     return jsonify(data)
 
 # start the development server using the run() method
