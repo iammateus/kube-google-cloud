@@ -22,7 +22,7 @@ steps:
   entrypoint: 'bash'
   args: [
    '-c', 
-   'echo $_PASSWORD | gpg --batch --yes --passphrase-fd 0 secrets.yaml.gpg'
+   'echo $_PASSWORD | gpg --batch --yes --passphrase-fd 0 k8s/secrets.yaml.gpg'
   ]
 - name: 'gcr.io/cloud-builders/kubectl'
   id: 'Deploy'
