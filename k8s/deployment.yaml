@@ -19,3 +19,6 @@ spec:
         name: kube-google-cloud
         ports:
         - containerPort: 80
+        envFrom:
+          - secretRef:
+              name: kube-google-cloud-secrets
