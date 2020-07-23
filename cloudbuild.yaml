@@ -17,6 +17,13 @@ steps:
    'gcr.io/$PROJECT_ID/$REPO_NAME:latest',
    '.'
   ]
+- name: 'gcr.io/cloud-builders/docker'
+  id: 'Decrypt Secrets'
+  entrypoint: 'bash'
+  args: [
+   '-c', 
+   'echo $_PASSWORD | gpg --batch --yes --passphrase-fd 0 secrets.yaml.gpg'
+  ]
 - name: 'gcr.io/cloud-builders/kubectl'
   id: 'Deploy'
   args: ['apply', '-f', 'k8s/']
