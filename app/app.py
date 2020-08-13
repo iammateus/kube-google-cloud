@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def helloWorld():
-    data = {'message': os.environ.get('HELLO') + ' ;) master'}
+    data = {'message': os.environ.get('HELLO') + ' ;) ' + os.environ.get('APP_ENV') }
     return jsonify(data)
 
 # start the development server using the run() method
